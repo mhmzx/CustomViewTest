@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TestView">
+        <attr name="icon" />
+        <attr name="iconUnselect" format="reference" />
+        <attr name="iconSize" format="dimension" />
+        <attr name="title" format="string" />
+    </declare-styleable>
+</resources>
