@@ -21,14 +21,15 @@ public class ExampleUnitTest {
         protected abstract void method();
     }
 
+    @SuppressWarnings("FieldCanBeLocal")
     public static class ClassB extends ClassA {
-        @SuppressWarnings("FieldCanBeLocal")
-        private final Integer integer = 114514; // print null
-//        private final int integer = 114514; // print 114514
+        private final Integer i1 = 114514;
+        private final int i2 = 114514;
 
         @Override
         protected void method() {
-            System.out.println(integer);
+            System.out.println(i1); // print null
+            System.out.println(i2); // print 114514
         }
     }
 }
