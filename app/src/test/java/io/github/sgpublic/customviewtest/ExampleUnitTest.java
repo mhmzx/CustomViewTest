@@ -4,14 +4,31 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/**
- * Example local unit test, which will execute on the development machine (host).
- *
- * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
- */
+import java.util.HashMap;
+import java.util.Map;
+
 public class ExampleUnitTest {
     @Test
-    public void addition_isCorrect() {
-        assertEquals(4, 2 + 2);
+    public void test() {
+        new ClassB();
+    }
+
+    public static abstract class ClassA {
+        public ClassA() {
+            method();
+        }
+
+        protected abstract void method();
+    }
+
+    public static class ClassB extends ClassA {
+        @SuppressWarnings("FieldCanBeLocal")
+        private final Integer integer = 114514; // print null
+//        private final int integer = 114514; // print 114514
+
+        @Override
+        protected void method() {
+            System.out.println(integer);
+        }
     }
 }
